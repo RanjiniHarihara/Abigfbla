@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Storybook</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+</head>
+<body>
+<div class="stars"></div>
+    <div class="twinkling"></div> 
+   <div class="clouds"></div>
+
+
+
+ <div class="typewriter">    
+    <div class="storybook">
+            <div class="progress-bar" id="progress-bar">
+                <div id="progress-fill"></div>
+            </div>     
+ 
+   <div class="audio-container">
+        Space Music Audio 
+                <audio id="spacemusic" loop>
+                    <source src="spacemusic.mp3" type="audio/mp3">
+                    Your browser does not support the audio element.
+                </audio>
+           Play Music / Stop Music Button 
+                 <button class="play-button" id="playButton" onclick="toggleAudio()">Play Music</button>
+                     </div> 
+                   
+
+        <!-- Page 1 -->
+            <div class="page fade-in" id="page-1">
+                <h1>Welcome To The Space Oddesey </h1> 
+                
+                <button class="next-button" onclick="nextPage()">Begin</button>
+            </div>
+
+        <!-- Page 2 -->
+             <div class="page hidden" id="page-2">
+            <h1>A Rocky Start</h1>
+            <p> You are on a daring space mission to a distant planet, tasked with exploring new land for your people to inhabit. But disaster strikes—your connection to home base is severed, and your ship begins to malfunction. With no other choice, you activate the emergency protocols and eject.</p>
+
+                <p>The escape pod lands safely, though the crash leaves you disoriented. Now stranded, you must find your ship, repair it, and continue your vital mission.</p>
+            <button class="next-button show" onclick="nextPage()">Next</button>
+             </div>
+
+        <!-- Page 3 -- Start journey -->
+             <div class="page hidden" id="page-3">
+            <h1>The Two Paths </h1>
+            <p>The unfamiliar landscape stretches out before you, a strange and wondrous place.</p>
+        <p> One path shimmers in the light—a smooth, glowing road that runs straight for miles, covered in majestic glacier-like structures that pierce the sky. The other path is its opposite—a winding, shadowed trail concealed by jagged rocks and twisted trees. The air grows heavier, the dim light casting long, unsettling shadows. Its destination is a mystery, the trail disappearing into obscurity.
+                With no map and no certainty of what lies ahead </p>
+                <p>Each road holds promise—and peril. But which one leads to your ship, and which could lead to your doom? </p>
+            <button class="choice-button" onclick="makeChoice('choice0')">Stop</button>
+            <button class="choice-button" onclick="makeChoice('choice1')">Take the Light Path</button>
+            <button class="choice-button" onclick="makeChoice('choice2')">Take the Dark Path</button>
+             </div>
+
+        <!-- Choice 1 - Light path  -->
+             <div class="page hidden" id="page-4">
+            <h1>The Light Path </h1>
+            <p>You take the light path, the ground is smooth, the air crsip. The towering glacier structures sparkle, 
+                reflecting every step you take. As you progress, the air grows colder. Frost creeps up your boots, and soon the chill bites at your face. 
+                Suddenly, the ground beneath you trembles. You look down to see the ground slowly split away from you. How are you going to get across now? the crack is nearly 
+                two feet. Should you take the chance and make the jump, or take a safer route back to the Dark Path? 
+            </p>
+            <button class="choice-button" onclick="makeChoice('choice0')">Stop</button>
+            <button class="choice-button" onclick="makeChoice('choice3')">Jump over crack</button>
+            <button class="choice-button" onclick="makeChoice('choice4')">Turn back to The Dark Path </button>
+             </div>
+
+        <!-- Choice 2 - Dark Path  -->
+             <div class="page hidden" id="page-5">
+            <h1>The Dark Path...</h1>
+            <p>What's an adventure without a hint of intrigue? You choose the dark path, wandering for hours across vast, shadowy lands. Surprisingly, the path feels less 
+                menacing than expected. As you venture further, a cavern emerges from the darkness, its hollow depths resonating with haunting, otherworldly sounds. 
+                You've traveled so far already, and the decision looms large before you. Will you take the risk and step into the unknown, or stay on the trail and play it safe?
+                </p>
+            <button class="choice-button" onclick="makeChoice('choice0')">Stop</button>
+            <button class="choice-button" onclick="makeChoice('choice5')">Enter the Glowing tavern</button>
+            <button class="choice-button" onclick="makeChoice('choice6')">Stay in the trail</button>
+             </div>
+
+        <!-- Choice 3 - Jump Over Crack -->
+             <div class="page hidden" id="page-6">
+            <h1>A Creature Awaits</h1>
+            <p>You decide to bundle up all your courage and jump over the track! Thankfully, all those years of training paied off and you made it to the other side! You walk a couple more miles, taking in the beauty of the 
+                new world around you. Soft sounds whisper out of nowhere. Is someone there? You turn to your right to see a creature looking up at you. It's beady eyes make you think
+                this might not be the nicest creature around. Should you take your chances and communicate with this creature or get ready to defend yourself? 
+
+            </p>
+            <button class="choice-button" onclick="makeChoice('choice0')">Stop</button>
+            <button class="choice-button" onclick="makeChoice('choice7')">Communicate with Creature</button>
+            <button class="choice-button" onclick="makeChoice('choice8')">Defend Yourself</button>
+            </div>
+
+         <!-- Choice 5 - Lever  -->
+             <div class="page hidden" id="page-7">
+            <h1>The lever</h1>
+            <p>You enter the glowing tavern, it's majestic from the inside, thousands of stars fill the room around you. It's like you've enter another galaxy all together. 
+                You walk around for a while, taking in the beauty of it all. It seems your walking for hours until you stumble up something, crashing to the floor. You look down to see 
+            two levers. What could that possibly be? Maybe these levers could lead you to your ship, but which one to choose? Should you pull the right lever or the left lever?</p>
+            <button class="choice-button" onclick="makeChoice('choice0')">Stop</button>
+            <button class="choice-button" onclick="makeChoice('choice9')">right </button>
+            <button class="choice-button" onclick="makeChoice('choice10')">Left</button>
+             </div>
+
+        <!-- Choice 6 - creature -->
+
+             <div class="page hidden" id="page-8">
+            <h1>A New Friend</h1>
+            <p>You don't want to risk getting in more trouble, so you decide to stay on the trail. You walk for a while, taking in the scenery of it all. Despite being stranded on 
+                a new planet with no way home, the place isn't so bad. After journying a little longer, you decide to take a break before continuing again. As start to close your eyes, you hear 
+                a voice. You look up to see a creature, You start speaking to the creature and it tells you it saw your ship crash 20 the other way, but he could
+            have mixed that up with a metior, it happens pretty often. Should you take the creatures advice and go back or should you continue on your own? </p>
+            <button class="choice-button" onclick="makeChoice('choice0')">Stop</button>
+            <button class="choice-button" onclick="makeChoice('choice11')">Yes Follow</button>
+            <button class="choice-button" onclick="makeChoice('choice12')">Don't Follow</button>
+             </div>
+
+          <!-- Choice 7 - Communicate with creature -->
+         <div class="page hidden" id="page-9">
+        <h1>The Creatures Message</h1>
+        <p>You decide not to get on anyones bad side just yet, who knows how long you'll be here. You wait for the creature to calm down and ask it if it knows anything about a 
+            ship that may have crashed around the area. The creature doesn't answer at first, but slowly, it walks toward you, it's beady eyes still staring at you. it points straight 
+        to the right. Could that be where your ship is? Should you follow the creatures instructions or follow ahead on your own?
+        </p>
+        <button class="choice-button" onclick="makeChoice('choice0')">Stop</button>
+        <button class="choice-button" onclick="makeChoice('choice13')">Follow The Creatures Instructions</button>
+        <button class="choice-button" onclick="makeChoice('choice14')">Go On Your Own</button>
+         </div>
+
+     <!-- Choice 8 - Stay on Trail -->
+         <div class="page hidden" id="page-10">
+        <h1>The Final Feild</h1>
+        <p> You stay on the trial, best to play to safe, you never know who you can trust here. However, as you walk, you start to get tired. This long journey has taken a toll on
+            your energy. You look a little further, and to your surprise, you see a feild, filled with berries and fruits. your stomach grumbles from hungry, should you take your chances 
+            and eat the fruits or play it safe until you find your ship.
+        </p>
+        <button class="choice-button" onclick="makeChoice('choice0')">Stop</button>
+        <button class="choice-button" onclick="makeChoice('choice15')">Eat Berry</button>
+        <button class="choice-button" onclick="makeChoice('choice16')">Dont Eat Berry</button>
+        </div>
+
+
+        <!-- Choice 11/13 - Return to trail-->
+            <div class="page hidden" id="page-11">
+            <h1>You Lost</h1>
+            <p> You decide to follow the creatures instructions, but unfortunetly they led you astray. Your tried and hungry and the long hours have travell have worn you out. 
+                You deicde to take a break, maybe you'll have better luck next time...
+            </p>
+            <button class="restart-button" onclick="restartStory()">Restart</button>
+             </div>
+        
+<!-- Choice 15 - Return to trail-->
+        <div class="page hidden" id="page-12">
+            <h1>You Lost!</h1>
+            <p> You ate the fruits, but didn't realize they were designed to make you instantly tried. You decide to take a small nap, maybe you'll have better luck next time.  </p>
+            <button class="restart-button" onclick="restartStory()">Restart</button>
+        </div>
+
+        <!-- Choice 12/14/16 Enter Glowing Tavern -->
+        <div class="page hidden" id="page-13">
+            <h1>Won!</h1>
+            <p>You decide to continue by yourself, despite the hardships you have already faced. You travel for miles, but finally something catches your eye, a large 
+                structure in the distance. Could it be what you think it is? You did it! You found your ship!
+            </p>
+            <button class="restart-button" onclick="restartStory()">Play Again</button>
+           
+        </div>
+
+         <!-- Choice 9-->
+         <div class="page hidden" id="page-14">
+            <h1>You Won!</h1>
+            <p>You pull the right lever and a trapdoor opens under you, sending you through a tunnel. You reach the end and land in a beautiful feild, you take in your surroundings 
+                and something across the feild catches your eyes. There stands your ships, you made it! You found your ship!</p>
+            <button class="restart-button" onclick="restartStory()">Play Again</button>
+           
+        </div>
+     <!-- Choice 10 -->
+        <div class="page hidden" id="page-15">
+            <h1>You Lost</h1>
+            <p> You picked the left lever, but unfortunetly it took you down a trapdoor, leading to a tunnel. You search for a way out for hours but can't seem to find one. 
+                You decide to take a small break and figure it out later, maybe you'll get lucky next time.  </p>
+            <button class="restart-button" onclick="restartStory()">Restart</button>
+            </div>
+
+            <div class="page hidden" id="page-0">
+                <h1>Thank you for playing</h1>
+                <button class="restart-button" onclick="restartStory()">Restart</button>
+            </div>
+
+        
+    </div>  
+</div>
+
+    <!-- <div class="credit">
+        Made by Abhigna Jagannatha
+    </div> -->
+
+   
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
