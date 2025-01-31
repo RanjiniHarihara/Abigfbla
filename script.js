@@ -53,11 +53,6 @@ function toggleMusic() {
 }
 
 
-
-/* volumeControl.addEventListener('input', (event) => {
-    backgroundMusic.volume = event.target.value;
-}); */
-
 function makeChoice(choice) {
     switch(choice) {
         case 'choice0':
@@ -123,21 +118,6 @@ function showPage(pageNumber) {
     currentPage = pageNumber;
     updateProgress();
 }
-
-/*
-document.addEventListener("DOMContentLoaded", function () {
-    setTimeout(function () {
-        document.querySelector(".next-button").style.display = "block!important"; 
-    }, 3500); // Matches the typewriter animation duration
-});
-
-*/
-
-/* function showNextButton() { 
-    document.getElementsByClassName("next-button").style.display = "block"; 
-}
-
-setTimeout("showNextButton()", 1000); */
 
 
 document.addEventListener("DOMContentLoaded", () => {  
