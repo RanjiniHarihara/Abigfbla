@@ -22,6 +22,27 @@ body {
     Z-index: 10;
 }
 
+.typewriter h1 {
+    padding-top: 5%;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    /* border-right: .2em solid orange;  The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation: 
+      typing 3.5s steps(40, end),
+      blink-caret .75s step-end infinite;
+  }
+
+  
+  
+  /* The typing effect */
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+
 @keyframes move-twink-back {
     from {background-position:0 0;}
     to {background-position:-10000px 5000px;}
@@ -108,40 +129,6 @@ p {
     padding-top: 40px;
 }
 
-/* Image Styles */
-.animated-forest, .animated-creature, .animated-path, .animated-hidden-path, .animated-clearing,
-.animated-glade, .animated-lair, .animated-resting, .animated-new-path, .animated-secret,
-.animated-path-return, .animated-artifacts, .animated-leave-lair {
-    width: 100%;
-    max-width: 600px; /* Larger image size */
-    height: auto;
-    border-radius: 15px;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4); /* Enhanced shadow for images */
-    transition: transform 0.5s ease, box-shadow 0.5s ease;
-}
-
-.moon-pics{
-    position: absolute;
-    bottom: -160px;
-    left: -160px;
-    width: 360px;
-    height: 360px;
-    background: url('moon-image.png') no-repeat center center;
-    background-size: cover;
-    z-index: 0; /* Places it behind the content */
-    opacity: 0.8;
-}
-
-/* Image Hover Effects */
-.animated-forest:hover, .animated-creature:hover, .animated-path:hover,
-.animated-hidden-path:hover, .animated-clearing:hover, .animated-glade:hover,
-.animated-lair:hover, .animated-resting:hover, .animated-new-path:hover,
-.animated-secret:hover, .animated-path-return:hover, .animated-artifacts:hover,
-.animated-leave-lair:hover {
-    transform: scale(1.1); /* Zoom effect on hover */
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5); /* Larger shadow on hover */
-}
-
 /* Progress Bar */
 .progress-bar {
     position: absolute;
@@ -217,34 +204,10 @@ button.next-button.show {
 
 
 
-
-
-/* Credit Section */
- .credit {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    color: #f0f0f0;
-    font-size: 16px;
-    font-style: italic;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    background: rgba(0, 0, 0, 0.7); /* Slight background to enhance readability */
-    padding: 5px 10px;
-    border-radius: 5px;
-} 
-
-
-
  @keyframes fadeIn {
     from { opacity: 0; transform: scale(0.9); }
     to { opacity: 1; transform: scale(1); }
 }
-
-/* @keyframes shimmer {
-    0% { background-position: -1000px 0; }
-    100% { background-position: 1000px 0; }
-}
-*/
 
 .audio-container {
     position: relative;
@@ -267,25 +230,6 @@ button.next-button.show {
     background-color: grey;
 }
 
-.typewriter h1 {
-    padding-top: 5%;
-    overflow: hidden; /* Ensures the content is not revealed until the animation */
-    /* border-right: .2em solid orange;  The typwriter cursor */
-    white-space: nowrap; /* Keeps the content on a single line */
-    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-    letter-spacing: .15em; /* Adjust as needed */
-    animation: 
-      typing 3.5s steps(40, end),
-      blink-caret .75s step-end infinite;
-  }
-
-  
-  
-  /* The typing effect */
-  @keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
-  }
   
   /* The typewriter cursor effect */
   @keyframes blink-caret {
